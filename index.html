@@ -1,110 +1,540 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#07111f">
-<meta name="description" content="وب‌سایت حمیدرضا؛ فناوری، خلاقیت و دنیای دیجیتال.">
-<title>حمیدرضا | دنیای فناوری</title>
-<style>
-:root{--bg:#07111f;--panel:#0d1c30;--text:#f1f7ff;--muted:#a8bad1;--cyan:#35e6ff;--blue:#4388ff;--purple:#a66bff;--line:rgba(112,190,255,.2)}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Tahoma,Arial,sans-serif;background:radial-gradient(ellipse at 15% 5%,#142e52 0,transparent 35%),radial-gradient(ellipse at 90% 35%,#17234a 0,transparent 30%),var(--bg);color:var(--text);line-height:1.8}
-a{color:var(--cyan);text-decoration:none}.wrap{width:min(1100px,92%);margin:auto}
-header{position:sticky;top:0;z-index:10;background:rgba(7,17,31,.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
-nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 0}.brand{font-size:1.25rem;font-weight:900;letter-spacing:-1px}.brand span{color:var(--cyan);text-shadow:0 0 18px #35e6ff88}
-nav .links{display:flex;gap:20px;flex-wrap:wrap;font-size:.93rem}nav .links a{color:var(--muted)}nav .links a:hover{color:var(--cyan)}
-.hero{padding:90px 0 70px;display:grid;grid-template-columns:1.2fr .8fr;align-items:center;gap:45px;min-height:440px}
-.tag{display:inline-block;border:1px solid #35e6ff55;color:var(--cyan);background:#35e6ff0d;padding:5px 13px;border-radius:99px;font-size:.85rem}
-h1{font-size:clamp(2.5rem,6vw,4.8rem);line-height:1.25;margin:20px 0}h1 em{font-style:normal;color:var(--cyan);text-shadow:0 0 28px #35e6ff40}
-.lead{color:var(--muted);max-width:600px;font-size:1.08rem}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
-.btn{display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--line);padding:11px 19px;border-radius:12px;color:var(--text);background:#10233b;cursor:pointer;font:inherit;transition:.2s}.btn.primary{background:linear-gradient(110deg,var(--blue),#087eae);border:0;box-shadow:0 8px 30px #168eff25}.btn:hover{transform:translateY(-2px);filter:brightness(1.12)}
-.orb{min-height:290px;display:grid;place-items:center;position:relative}.orb:before,.orb:after{content:"";position:absolute;border:1px solid #35e6ff55;border-radius:50%;width:250px;height:250px;box-shadow:0 0 55px #35e6ff16,inset 0 0 35px #35e6ff0b;transform:rotate(-25deg) scaleY(.55)}.orb:after{width:190px;height:190px;border-color:#a66bff66;transform:rotate(45deg) scaleY(.7)}.chip{z-index:1;width:130px;height:130px;border-radius:30px;display:grid;place-items:center;font-size:3rem;background:linear-gradient(140deg,#153b62,#111b36);border:1px solid #35e6ff80;box-shadow:0 0 55px #35e6ff2c}
-section{padding:45px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:15px;margin-bottom:22px}.section-head h2{margin:0;font-size:1.8rem}.section-head p{margin:0;color:var(--muted);font-size:.9rem}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{border:1px solid var(--line);border-radius:18px;background:linear-gradient(145deg,#11233aee,#0b1728ee);padding:22px;min-width:0;overflow:hidden}.card .icon{font-size:1.8rem}.card h3{margin:8px 0}.card p{color:var(--muted);margin:0;overflow-wrap:anywhere}.content-card img,.content-card video{max-width:100%;width:100%;border-radius:12px;margin-top:12px}.content-card .filelink{display:inline-block;margin-top:10px;overflow-wrap:anywhere}.empty{color:var(--muted);border:1px dashed #42607e;border-radius:16px;padding:25px;text-align:center;grid-column:1/-1}
-footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-size:.9rem;margin-top:40px}.footer-inner{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
-.modal{position:fixed;inset:0;background:#020711d9;backdrop-filter:blur(8px);z-index:30;display:none;overflow:auto;padding:22px}.modal.show{display:block}.modalbox{max-width:850px;margin:3vh auto;background:#0b192b;border:1px solid #35e6ff55;border-radius:20px;padding:22px;box-shadow:0 20px 80px #0008}.modalhead{display:flex;justify-content:space-between;align-items:center;gap:12px}.modalhead h2{margin:0}.close{font-size:1.5rem;border:0;background:transparent;color:white;cursor:pointer}
-input,textarea,select{width:100%;background:#071321;color:var(--text);border:1px solid #294663;border-radius:10px;padding:11px;font:inherit;margin-top:6px}label{display:block;margin:12px 0;color:var(--muted);font-size:.92rem}textarea{min-height:90px;resize:vertical}.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.hint{background:#302710;border:1px solid #8a6b29;color:#ffe3a0;padding:12px 14px;border-radius:12px;font-size:.9rem;margin:16px 0}.admin-items{display:grid;gap:10px;margin-top:20px}.admin-row{display:flex;justify-content:space-between;gap:12px;align-items:center;border:1px solid var(--line);padding:12px;border-radius:12px;overflow-wrap:anywhere}.small{font-size:.8rem;color:var(--muted)}.hidden{display:none!important}
-@media(max-width:750px){.hero{grid-template-columns:1fr;padding:55px 0 25px;gap:5px}.orb{min-height:210px;order:-1}.orb:before{width:190px;height:190px}.orb:after{width:145px;height:145px}.chip{width:100px;height:100px}.grid{grid-template-columns:1fr}.section-head{display:block}.formgrid{grid-template-columns:1fr}nav{align-items:flex-start}nav .links{gap:10px;font-size:.82rem}.brand{white-space:nowrap}}
-</style>
-</head>
-<body>
-<header><div class="wrap"><nav><a class="brand" href="#"><span>◆</span> حمیدرضا</a><div class="links"><a href="#about">درباره</a><a href="#features">ویژگی‌ها</a><a href="#content">مطالب</a><a href="#contact">ارتباط</a></div><button class="btn" id="ownerOpen">پنل مالک 🔐</button></nav></div></header>
-<main>
-<div class="wrap hero">
-  <div><span class="tag">فناوری • خلاقیت • آینده</span><h1>به دنیای <em>حمیدرضا</em><br>خوش آمدی.</h1><p class="lead">اینجا جایی برای ایده‌های تازه، محتوای دیجیتال و دنیای تکنولوژی است. این سایت را می‌توانی با عکس، ویدیو، متن، لینک و فایل‌های خودت گسترش بدهی.</p><div class="actions"><a class="btn primary" href="#content">دیدن مطالب</a><a class="btn" href="#about">بیشتر بدان</a></div></div>
-  <div class="orb"><div class="chip">⌘</div></div>
-</div>
-<section id="about"><div class="wrap"><div class="section-head"><h2>درباره سایت</h2><p>یک فضای دیجیتال با حال‌وهوای آینده</p></div><div class="card"><p>وب‌سایت <strong>حمیدرضا</strong> با ترکیب آبی نئونی، فیروزه‌ای و سرمه‌ای طراحی شده است؛ رنگ‌هایی الهام‌گرفته از فناوری و رابط‌های دیجیتال. از پنل مالک می‌توانی محتوای نمایشی را اضافه کنی.</p></div></div></section>
-<section id="features"><div class="wrap"><div class="section-head"><h2>چه چیزهایی اینجاست؟</h2><p>محتوای دلخواهت را اضافه کن</p></div><div class="grid">
-<div class="card"><div class="icon">🖼️</div><h3>عکس و ویدیو</h3><p>نمایش رسانه‌ها در بخش مطالب سایت.</p></div>
-<div class="card"><div class="icon">✍️</div><h3>متن و لینک</h3><p>انتشار نوشته‌ها و لینک‌های مفید.</p></div>
-<div class="card"><div class="icon">📁</div><h3>فایل‌ها</h3><p>قرار دادن فایل برای مشاهده یا دریافت.</p></div>
-</div></div></section>
-<section id="content"><div class="wrap"><div class="section-head"><h2>مطالب و رسانه‌ها</h2><p>محتوای منتشرشده در این مرورگر</p></div><div id="contentGrid" class="grid"><div class="empty">هنوز محتوایی اضافه نشده است. از پنل مالک یک مطلب آزمایشی اضافه کن.</div></div></div></section>
-<section id="contact"><div class="wrap"><div class="section-head"><h2>ارتباط</h2><p>راه‌های ارتباطی خودت را می‌توانی در پنل اضافه کنی.</p></div><div class="card"><p>برای افزودن شبکه‌های اجتماعی یا لینک‌های دیگر، از پنل مالک نوع «لینک» را انتخاب کن.</p></div></div></section>
-</main>
-<footer><div class="wrap footer-inner"><span>© ۱۴۰۵ حمیدرضا</span><span>طراحی‌شده با رنگ‌های الهام‌گرفته از فناوری ✦</span></div></footer>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#07111f">
+  <meta name="description" content="وب‌سایت رسمی حمیدرضا">
+  <title>حمیدرضا | وب‌سایت رسمی</title>
 
-<div class="modal" id="ownerModal" role="dialog" aria-modal="true" aria-label="پنل مالک"><div class="modalbox">
-<div class="modalhead"><h2>پنل مالک سایت</h2><button class="close" id="closeModal" aria-label="بستن">×</button></div>
-<div class="hint"><strong>مهم:</strong> این نسخه برای GitHub Pages یک نمونهٔ نمایشی است. رمز و محتوا فقط در مرورگر ذخیره می‌شوند؛ رمز این پنل امنیت واقعی ندارد و فایل‌های بارگذاری‌شده به‌طور خودکار روی سایت منتشر نمی‌شوند. برای پنل امن و آپلود واقعی باید احراز هویت و فضای ذخیره‌سازی مثل Firebase به سایت وصل شود.</div>
-<div id="loginArea"><p>برای ورود به پنل نمایشی، رمز آزمایشی را وارد کن: <code>demo1234</code></p><label>رمز پنل<input id="ownerPassword" type="password" autocomplete="current-password" placeholder="رمز آزمایشی"></label><button class="btn primary" id="loginBtn">ورود به پنل</button><p id="loginError" class="small"></p></div>
-<div id="adminArea" class="hidden">
-<div class="hint">نسخهٔ آزمایشی: تا وقتی همین مرورگر و داده‌هایش باقی بمانند، محتوا را می‌بینی. برای انتشار عمومی، باید فایل‌ها را در فضای ذخیره‌سازی آنلاین آپلود کنی.</div>
-<form id="contentForm">
-<div class="formgrid"><label>عنوان محتوا<input id="title" required maxlength="100" placeholder="مثلاً معرفی پروژه جدید"></label><label>نوع محتوا<select id="type"><option value="text">متن</option><option value="image">عکس</option><option value="video">ویدیو</option><option value="link">لینک</option><option value="file">فایل</option></select></label></div>
-<label>توضیحات / متن<textarea id="description" maxlength="3000" placeholder="متن یا توضیح محتوا..."></textarea></label>
-<label>لینک (برای لینک، یا آدرس رسانهٔ آنلاین)<input id="url" type="url" placeholder="https://example.com"></label>
-<label>انتخاب فایل از دستگاه (برای پیش‌نمایش محلی)<input id="upload" type="file" accept="image/*,video/*,.pdf,.txt,.zip,.doc,.docx"></label>
-<p class="small">فایل‌های بزرگ ممکن است در مرورگر ذخیره نشوند. فایل انتخابی فقط برای پیش‌نمایش محلی است و به GitHub آپلود نمی‌شود.</p>
-<button class="btn primary" type="submit">افزودن محتوا</button> <button class="btn" type="button" id="logoutBtn">خروج از پنل</button>
-</form><div class="admin-items" id="adminItems"></div>
-</div></div></div>
-<script>
-const $=id=>document.getElementById(id);
-const modal=$('ownerModal');
-const KEY='hamidreza_site_demo_content_v1';
-let items=[];
-try{items=JSON.parse(localStorage.getItem(KEY)||'[]')}catch(e){items=[]}
-function escapeHTML(s=''){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
-function safeURL(value){try{const u=new URL(value);return ['http:','https:','data:','blob:'].includes(u.protocol)?u.href:''}catch(e){return ''}}
-function save(){try{localStorage.setItem(KEY,JSON.stringify(items));return true}catch(e){alert('ذخیره‌سازی مرورگر پر شده است. فایل کوچک‌تری انتخاب کن یا بعضی مطالب را حذف کن.');return false}}
-function render(){
- const grid=$('contentGrid');grid.innerHTML='';
- if(!items.length){grid.innerHTML='<div class="empty">هنوز محتوایی اضافه نشده است. از پنل مالک یک مطلب اضافه کن.</div>'}
- items.forEach(item=>{
-  const card=document.createElement('article');card.className='card content-card';
-  let media='';
-  if(item.type==='image'&&item.data)media=`<img src="${item.data}" alt="${escapeHTML(item.title)}">`;
-  else if(item.type==='video'&&item.data)media=`<video src="${item.data}" controls></video>`;
-  else if(item.type==='link'&&item.url)media=`<a class="filelink" href="${escapeHTML(safeURL(item.url))}" target="_blank" rel="noopener noreferrer">باز کردن لینک ↗</a>`;
-  else if(item.type==='file'&&item.data)media=`<a class="filelink" href="${item.data}" download="${escapeHTML(item.fileName||item.title)}">دریافت فایل: ${escapeHTML(item.fileName||item.title)} ↧</a>`;
-  else if(item.url)media=`<a class="filelink" href="${escapeHTML(safeURL(item.url))}" target="_blank" rel="noopener noreferrer">مشاهده پیوند ↗</a>`;
-  card.innerHTML=`<span class="tag">${({text:'متن',image:'عکس',video:'ویدیو',link:'لینک',file:'فایل'})[item.type]||'مطلب'}</span><h3>${escapeHTML(item.title)}</h3><p>${escapeHTML(item.description||'')}</p>${media}<p class="small">${escapeHTML(item.date||'')}</p>`;
-  grid.appendChild(card);
- });
- const list=$('adminItems');list.innerHTML='';
- items.forEach(item=>{const row=document.createElement('div');row.className='admin-row';row.innerHTML=`<span>${escapeHTML(item.title)} <span class="small">(${escapeHTML(item.type)})</span></span><button class="btn" type="button" data-delete="${escapeHTML(item.id)}">حذف</button>`;list.appendChild(row)});
-}
-$('ownerOpen').onclick=()=>{modal.classList.add('show');$('loginArea').classList.remove('hidden');$('adminArea').classList.add('hidden');$('ownerPassword').value='';$('loginError').textContent=''};
-$('closeModal').onclick=()=>modal.classList.remove('show');
-modal.addEventListener('click',e=>{if(e.target===modal)modal.classList.remove('show')});
-$('loginBtn').onclick=()=>{if($('ownerPassword').value==='demo1234'){$('loginArea').classList.add('hidden');$('adminArea').classList.remove('hidden');render()}else $('loginError').textContent='رمز واردشده درست نیست.'};
-$('ownerPassword').addEventListener('keydown',e=>{if(e.key==='Enter')$('loginBtn').click()});
-$('logoutBtn').onclick=()=>{$('adminArea').classList.add('hidden');$('loginArea').classList.remove('hidden');$('ownerPassword').value=''};
-$('contentForm').addEventListener('submit',async e=>{
- e.preventDefault();
- const file=$('upload').files[0],type=$('type').value,url=safeURL($('url').value.trim());
- if($('url').value.trim()&&!url){alert('لطفاً یک لینک معتبر با http یا https وارد کن.');return}
- let data='';
- if(file){
-  if(file.size>3*1024*1024){alert('برای نسخهٔ نمایشی، فایل حداکثر ۳ مگابایت باشد. برای فایل‌های بزرگ‌تر باید فضای ذخیره‌سازی آنلاین وصل شود.');return}
-  data=await new Promise((resolve,reject)=>{const r=new FileReader();r.onload=()=>resolve(r.result);r.onerror=reject;r.readAsDataURL(file)});
- }
- const item={id:Date.now().toString(),title:$('title').value.trim(),type,description:$('description').value.trim(),url,data,fileName:file?.name||'',date:new Date().toLocaleDateString('fa-IR')};
- items.unshift(item);if(save()){render();e.target.reset();alert('محتوا به نسخهٔ نمایشی این مرورگر اضافه شد. برای انتشار روی سایت آنلاین، باید اتصال ذخیره‌سازی راه‌اندازی شود.')}
-});
-$('adminItems').addEventListener('click',e=>{const id=e.target.dataset.delete;if(id&&confirm('این محتوا حذف شود؟')){items=items.filter(x=>x.id!==id);save();render()}});
-render();
-</script>
-</body></html>
+  <style>
+    :root {
+      --bg: #07111f;
+      --panel: #101e32;
+      --border: #243650;
+      --blue: #20c8ff;
+      --purple: #7770ff;
+      --text: #eef6ff;
+      --muted: #a8b8cc;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background:
+        radial-gradient(ellipse at top, #132b48, transparent 55%),
+        var(--bg);
+      color: var(--text);
+      font-family: Tahoma, Arial, sans-serif;
+      line-height: 1.9;
+    }
+
+    a { color: var(--blue); overflow-wrap: anywhere; }
+
+    header {
+      padding: 28px 18px;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+      background: #07111fe8;
+    }
+
+    .logo {
+      font-size: 30px;
+      font-weight: bold;
+      color: var(--blue);
+      text-shadow: 0 0 20px #20c8ff60;
+    }
+
+    header p { color: var(--muted); margin: 5px 0; }
+
+    main {
+      width: min(900px, 92%);
+      margin: 28px auto;
+    }
+
+    .card {
+      background: #101e32e8;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 22px;
+      margin-bottom: 20px;
+      box-shadow: 0 10px 35px #0003;
+    }
+
+    h2 { margin-top: 0; font-size: 21px; }
+
+    input, textarea {
+      display: block;
+      width: 100%;
+      margin: 10px 0;
+      padding: 13px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: #07111f;
+      color: white;
+      font: inherit;
+      outline: none;
+    }
+
+    input:focus, textarea:focus {
+      border-color: var(--blue);
+    }
+
+    textarea { min-height: 120px; resize: vertical; }
+
+    button {
+      border: 0;
+      border-radius: 10px;
+      padding: 11px 17px;
+      margin: 5px 3px;
+      font: inherit;
+      font-weight: bold;
+      cursor: pointer;
+      background: linear-gradient(100deg, var(--blue), #7b80ff);
+      color: #07111f;
+    }
+
+    button.secondary {
+      background: #243650;
+      color: white;
+    }
+
+    button.danger {
+      background: #8c3048;
+      color: white;
+    }
+
+    .muted { color: var(--muted); font-size: 14px; }
+
+    .post {
+      padding: 18px 0;
+      border-bottom: 1px solid var(--border);
+      overflow-wrap: anywhere;
+    }
+
+    .post:last-child { border-bottom: 0; }
+
+    .post h3 { color: var(--blue); margin-bottom: 8px; }
+
+    .post img, .post video {
+      max-width: 100%;
+      border-radius: 12px;
+      margin-top: 12px;
+    }
+
+    .hidden { display: none !important; }
+
+    #status { min-height: 28px; color: var(--blue); }
+
+    footer {
+      text-align: center;
+      padding: 25px 10px;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="logo">حمیدرضا</div>
+    <p>وب‌سایت رسمی | دنیایی از محتوا و خلاقیت</p>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>درباره سایت</h2>
+      <p>
+        به وب‌سایت حمیدرضا خوش آمدید.
+        مطالب، لینک‌ها و محتوای منتشرشده را در این صفحه ببینید.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>مطالب منتشرشده</h2>
+      <p class="muted">مطالب عمومی سایت در این قسمت نمایش داده می‌شوند.</p>
+      <div id="posts">
+        در حال دریافت مطالب...
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>ورود مالک</h2>
+      <p class="muted">
+        فقط حساب مالک تأییدشده می‌تواند مطالب را مدیریت کند.
+      </p>
+
+      <form id="loginForm">
+        <input id="email" type="email"
+          placeholder="ایمیل مالک" required autocomplete="username">
+
+        <input id="password" type="password"
+          placeholder="رمز عبور" required
+          autocomplete="current-password">
+
+        <button type="submit">ورود به پنل</button>
+      </form>
+
+      <button id="logoutBtn" class="secondary hidden">
+        خروج از حساب
+      </button>
+
+      <p id="status" role="status" aria-live="polite"></p>
+    </section>
+
+    <section id="adminPanel" class="card hidden">
+      <h2>پنل مدیریت</h2>
+      <p class="muted">
+        از این بخش می‌توانی متن، لینک یا نشانی تصویر و ویدئو منتشر کنی.
+      </p>
+
+      <form id="postForm">
+        <input id="title" maxlength="120"
+          placeholder="عنوان مطلب" required>
+
+        <textarea id="body"
+          maxlength="10000"
+          placeholder="متن مطلب"></textarea>
+
+        <input id="link"
+          type="url"
+          placeholder="لینک اختیاری (https://...)">
+
+        <input id="mediaUrl"
+          type="url"
+          placeholder="لینک مستقیم تصویر یا ویدئو (اختیاری)">
+
+        <button type="submit">انتشار مطلب</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> حمیدرضا
+    <br>
+    طراحی با رنگ‌های فناوری و آینده‌نگر
+  </footer>
+
+  <script type="module">
+    import { initializeApp }
+      from "https://www.gstatic.com/firebasejs/13.0.0/firebase-app.js";
+
+    import {
+      getAuth,
+      signInWithEmailAndPassword,
+      signOut,
+      onAuthStateChanged
+    } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-auth.js";
+
+    import {
+      getFirestore,
+      collection,
+      addDoc,
+      deleteDoc,
+      doc,
+      query,
+      orderBy,
+      onSnapshot,
+      serverTimestamp
+    } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-firestore.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyCjlXAY_rKnI2qmwKPih8dxTR1Cto-EJqg",
+      authDomain: "hamidreza-website.firebaseapp.com",
+      projectId: "hamidreza-website",
+      storageBucket: "hamidreza-website.firebasestorage.app",
+      messagingSenderId: "790401759513",
+      appId: "1:790401759513:web:5d7cd8ed7c96dfb3812d88",
+      measurementId: "G-LRYRX11RE6"
+    };
+
+    const OWNER_EMAIL = "kar380697@gmail.com";
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const db = getFirestore(app);
+
+    const $ = id => document.getElementById(id);
+
+    $("year").textContent = new Date().getFullYear();
+
+    let currentUser = null;
+    let unsubscribePosts = null;
+    let latestPosts = [];
+
+    function setStatus(message) {
+      $("status").textContent = message;
+    }
+
+    function isOwner(user) {
+      return !!user &&
+        user.email === OWNER_EMAIL &&
+        user.emailVerified === true;
+    }
+
+    function showError(error) {
+      console.error(error);
+
+      const messages = {
+        "auth/invalid-credential":
+          "ایمیل یا رمز عبور صحیح نیست.",
+        "auth/invalid-email":
+          "قالب ایمیل صحیح نیست.",
+        "auth/too-many-requests":
+          "تلاش‌های زیادی انجام شده؛ کمی بعد دوباره امتحان کن.",
+        "permission-denied":
+          "دسترسی رد شد؛ قوانین Firestore و ایمیل مالک را بررسی کن."
+      };
+
+      setStatus(
+        messages[error.code] ||
+        "خطا رخ داد. اتصال اینترنت و تنظیمات Firebase را بررسی کن."
+      );
+    }
+
+    function safeHttpUrl(value) {
+      if (!value) return "";
+
+      try {
+        const url = new URL(value);
+
+        if (url.protocol === "https:" || url.protocol === "http:") {
+          return url.href;
+        }
+      } catch {}
+
+      return "";
+    }
+
+    function makeLink(url, label) {
+      const safe = safeHttpUrl(url);
+      if (!safe) return null;
+
+      const a = document.createElement("a");
+      a.href = safe;
+      a.textContent = label;
+      a.target = "_blank";
+      a.rel = "noopener noreferrer";
+      return a;
+    }
+
+    function renderPosts(posts) {
+      const container = $("posts");
+      container.replaceChildren();
+
+      if (!posts.length) {
+        container.textContent = "هنوز مطلبی منتشر نشده است.";
+        return;
+      }
+
+      for (const post of posts) {
+        const article = document.createElement("article");
+        article.className = "post";
+
+        const title = document.createElement("h3");
+        title.textContent = post.title || "بدون عنوان";
+        article.appendChild(title);
+
+        if (post.body) {
+          const paragraph = document.createElement("p");
+          paragraph.textContent = post.body;
+          article.appendChild(paragraph);
+        }
+
+        const link = makeLink(post.link, "بازکردن لینک");
+        if (link) article.appendChild(link);
+
+        const mediaUrl = safeHttpUrl(post.mediaUrl);
+
+        if (mediaUrl) {
+          const isImage = /\.(png|jpe?g|gif|webp|avif)(\?.*)?$/i.test(mediaUrl);
+          const isVideo = /\.(mp4|webm|ogv)(\?.*)?$/i.test(mediaUrl);
+
+          if (isImage) {
+            const img = document.createElement("img");
+            img.src = mediaUrl;
+            img.alt = post.title || "تصویر مطلب";
+            img.loading = "lazy";
+            img.referrerPolicy = "no-referrer";
+            article.appendChild(img);
+          } else if (isVideo) {
+            const video = document.createElement("video");
+            video.src = mediaUrl;
+            video.controls = true;
+            video.preload = "metadata";
+            article.appendChild(video);
+          } else {
+            const mediaLink = makeLink(mediaUrl, "مشاهده رسانه");
+            if (mediaLink) {
+              article.appendChild(document.createElement("br"));
+              article.appendChild(mediaLink);
+            }
+          }
+        }
+
+        if (isOwner(currentUser)) {
+          const deleteButton = document.createElement("button");
+          deleteButton.className = "danger";
+          deleteButton.textContent = "حذف مطلب";
+
+          deleteButton.addEventListener("click", async () => {
+            if (!isOwner(auth.currentUser)) {
+              setStatus("برای حذف، باید مالک وارد شده باشد.");
+              return;
+            }
+
+            if (!confirm("این مطلب حذف شود؟")) return;
+
+            try {
+              await deleteDoc(doc(db, "posts", post.id));
+              setStatus("مطلب حذف شد.");
+            } catch (error) {
+              showError(error);
+            }
+          });
+
+          article.appendChild(document.createElement("br"));
+          article.appendChild(deleteButton);
+        }
+
+        container.appendChild(article);
+      }
+    }
+
+    function listenToPosts() {
+      if (unsubscribePosts) unsubscribePosts();
+
+      const postsQuery = query(
+        collection(db, "posts"),
+        orderBy("createdAt", "desc")
+      );
+
+      unsubscribePosts = onSnapshot(postsQuery, snapshot => {
+        latestPosts = snapshot.docs.map(item => ({
+          id: item.id,
+          ...item.data()
+        }));
+
+        renderPosts(latestPosts);
+      }, error => {
+        console.error(error);
+        $("posts").textContent =
+          "دریافت مطالب ناموفق بود. قوانین Firestore را بررسی کن.";
+      });
+    }
+
+    $("loginForm").addEventListener("submit", async event => {
+      event.preventDefault();
+      setStatus("در حال ورود...");
+
+      try {
+        const email = $("email").value.trim();
+        const password = $("password").value;
+
+        const result = await signInWithEmailAndPassword(
+          auth, email, password
+        );
+
+        await result.user.reload();
+
+        if (!isOwner(auth.currentUser)) {
+          await signOut(auth);
+          setStatus(
+            "این حساب مالک نیست یا ایمیل آن هنوز تأیید نشده است."
+          );
+          return;
+        }
+
+        setStatus("ورود موفق بود.");
+      } catch (error) {
+        showError(error);
+      }
+    });
+
+    $("logoutBtn").addEventListener("click", async () => {
+      try {
+        await signOut(auth);
+        setStatus("از حساب خارج شدی.");
+      } catch (error) {
+        showError(error);
+      }
+    });
+
+    $("postForm").addEventListener("submit", async event => {
+      event.preventDefault();
+
+      if (!isOwner(auth.currentUser)) {
+        setStatus("ابتدا با حساب مالک تأییدشده وارد شو.");
+        return;
+      }
+
+      const title = $("title").value.trim();
+      const body = $("body").value.trim();
+      const linkInput = $("link").value.trim();
+      const mediaInput = $("mediaUrl").value.trim();
+
+      if (!title) {
+        setStatus("عنوان مطلب را وارد کن.");
+        return;
+      }
+
+      if (linkInput && !safeHttpUrl(linkInput)) {
+        setStatus("لینک باید با http:// یا https:// شروع شود.");
+        return;
+      }
+
+      if (mediaInput && !safeHttpUrl(mediaInput)) {
+        setStatus("لینک رسانه معتبر نیست.");
+        return;
+      }
+
+      try {
+        setStatus("در حال انتشار...");
+
+        await addDoc(collection(db, "posts"), {
+          title,
+          body,
+          link: linkInput,
+          mediaUrl: mediaInput,
+          ownerUid: auth.currentUser.uid,
+          createdAt: serverTimestamp()
+        });
+
+        $("postForm").reset();
+        setStatus("مطلب با موفقیت منتشر شد.");
+      } catch (error) {
+        showError(error);
+      }
+    });
+
+    onAuthStateChanged(auth, async user => {
+      currentUser = user;
+
+      if (user) {
+        try {
+          await user.reload();
+        } catch {}
+
+        currentUser = auth.currentUser;
+      }
+
+      const owner = isOwner(currentUser);
+
+      $("adminPanel").classList.toggle("hidden", !owner);
+      $("logoutBtn").classList.toggle("hidden", !currentUser);
+      $("loginForm").classList.toggle("hidden", !!currentUser);
+
+      renderPosts(latestPosts);
+
+      if (currentUser && !owner) {
+        setStatus("این حساب اجازه مدیریت سایت را ندارد.");
+      } else if (owner) {
+        setStatus("به پنل مدیریت خوش آمدی.");
+      }
+    });
+
+    listenToPosts();
+  </script>
+</body>
+</html>
